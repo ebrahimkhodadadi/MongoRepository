@@ -7,6 +7,6 @@
 
 To use filters
 ```csharp
-  await _repository.GetAsync(x => x.Created >= from && x.Created <= to);
+  await _repository.AsQueryable().Where(x => x.Created >= from && x.Created <= to);
 ```
 
