@@ -7,6 +7,9 @@
 
 To use filters
 ```csharp
-  await _repository.AsQueryable().Where(x => x.Created >= from && x.Created <= to);
+    _repository.AsQueryable().Where(x => x.Created >= from && x.Created <= to);
 ```
+
+**Warning**
+Dont use AsEnumerable as much as you can it will decrease the speed and performance so much
 
