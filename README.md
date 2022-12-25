@@ -11,5 +11,5 @@ To use filters
 ```
 
 > **Warning**
-Dont use AsEnumerable as much as you can it will decrease the speed and performance so much
+**Dont use AsEnumerable** as much as you can it will decrease the speed and performance so much
 
