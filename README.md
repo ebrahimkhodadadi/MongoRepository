@@ -9,7 +9,7 @@
 > use [BsonIgnoreIfNull] Attribute to dont save property if it's null
 
 
-# To use filters
+### To use filters
 ```csharp
     _repository.AsQueryable().Where(x => x.Created >= from && x.Created <= to);
 ```
