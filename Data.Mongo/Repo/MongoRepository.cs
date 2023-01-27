@@ -29,6 +29,18 @@ public class MongoRepository<T> : IMongoRepository<T> where T : MongoBaseDocumen
 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public IQueryable<T> AsQueryable()
+        => Collection.AsQueryable();
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="entity"></param>
+    /// <returns></returns>
     public async Task AddAsync(T entity)
         => await Collection.InsertOneAsync(entity);
 

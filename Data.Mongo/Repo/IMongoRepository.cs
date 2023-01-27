@@ -11,6 +11,13 @@ public interface IMongoRepository<T> where T : MongoBaseDocument
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
+    IQueryable<T> AsQueryable();
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     Task<T> GetByIdAsync(string id);
 
     /// <summary>
