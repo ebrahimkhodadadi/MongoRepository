@@ -1,6 +1,13 @@
 ﻿namespace Data.Mongo;
-public class MongoDbOptions
+
+public interface IMongoDbSettings
 {
+    string DatabaseName { get; set; }
+    string ConnectionString { get; set; }
+}
+
+public class MongoDbOptions : IMongoDbSettings
+{
+    public string DatabaseName { get; set; }
     public string ConnectionString { get; set; }
-    public string Database { get; set; }
 }
