@@ -9,7 +9,7 @@ public class MongoRepository<T> : IMongoRepository<T> where T : MongoBaseDocumen
 
     protected IMongoCollection<T> Collection { get; }
 
-    public MongoRepository(IMongoDatabase database)
+    public MongoRepository(MongoDbOptions settings)
     {
         string collectionName;
 
@@ -25,6 +25,8 @@ public class MongoRepository<T> : IMongoRepository<T> where T : MongoBaseDocumen
         }
 
         //var collectionName = typeof(TEntity).GetCustomAttribute<BsonCollectionAttribute>(false).CollectionName;
+        var client = new MongoClient(settings.ConnectionString);
+        var database = client.GetDatabase(settings.DatabaseName);
         Collection = database.GetCollection<T>(collectionName);
 
     }
